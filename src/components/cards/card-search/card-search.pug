@@ -1,0 +1,30 @@
+include ../../form-wrap/form-wrap.pug
+
+mixin card-search()
+
+  .card-search
+          
+    +form-wrap({title: "Найдём номера под ваши пожелания"})
+      
+      .cntr-flex-between-wrap
+
+        +form-element({title: "прибытие", width: "xs", marginRight: "5"})
+          +dropdown({id: "dropdown-date-1", width: "xs", title: "ДД.ММ.ГГГГ"})
+            +option-for-dropdown({})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+        
+        +form-element({title: "выезд", width: "xs"})
+          +dropdown({id: "dropdown-date-2", width: "xs", title: "ДД.ММ.ГГГГ"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+
+      +form-element({title: "гости"})
+        +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей", notSaved: "2", typeDrop: "guests"})
+          +option-for-dropdown({title: "Взрослые"})
+          +option-for-dropdown({title: "Дети"})
+          +option-for-dropdown({title: "Младенцы"})
+      
+      +btn({title: "подобрать номер", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true, marginTop: '20', paddingRight: "3"})

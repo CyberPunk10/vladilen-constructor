@@ -1,0 +1,116 @@
+// Контейнер <div> - необходим для размещения выпадающего содержимого
+.dropdown                      
+  position: relative
+  display: inline-block
+  min-width: 15rem
+  max-width: 32rem
+  width: 100%
+  margin-bottom: 1rem
+  
+  // &:hover
+  //   box-shadow: 0px 10px 20px $color-dark-shade-5
+
+  &:hover &__btn,
+  &:hover &__content
+    border-color: $color-dark-shade-50
+  
+
+  // Кнопка выпадающего списка
+  &__btn                       
+    cursor: pointer
+    position: relative
+    text-align: left
+    user-select: none         // делает текст невыделяемым
+    @include text-field-and-drop-btn
+
+    &::-webkit-input-placeholder
+      color: $color-dark-shade-25
+    &::-moz-placeholder
+      color: $color-dark-shade-25
+
+    // ico
+    &-icon
+      position: absolute
+      top: 0
+      right: 0
+      padding: .9rem
+
+
+  // Выпадающее содержимое (скрыто по умолчанию)
+  &__content              
+    display: none
+    position: absolute
+    z-index: 1
+    width: 100%
+    border: 1px solid $color-dark-shade-25
+    border-top: none
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    overflow: hidden
+    padding: .35rem 0 .2rem
+    background-color: #fff
+    transition: all ease .2s
+    
+    // C этим классом dropdown не вываливается из потока и показывает контент, отодвигая нижележащие сущности
+    &_no-absolute
+      position: static
+
+
+    // Ссылки внутри выпадающего списка (в макете от FSD не используются - можно удалить)
+    // a                            
+    //   cursor: pointer
+    //   display: block
+    //   background: #FFFFFF
+    //   padding: 1.3rem 1.5rem
+    //   font-size: 14px
+    //   font-family: $Montserrat
+    //   color: $color-dark-shade-75
+    //   user-select: none         // делает текст невыделяемым
+
+
+  // нижний блок с кнопками 'применить' и 'очистить'
+  &__wrap-btns-clear-apply,
+  &__wrap-btn-apply
+    padding: 1.5rem .6rem .95rem 1.25rem
+
+  &__wrap-btns-clear-apply
+    @include isFlex($justify: space-between)
+
+  &__wrap-btn-apply
+    @include isFlex($justify: flex-end)
+
+
+
+  //- --------------------------- состояния --------------------------- -//
+
+  // width dropdown 
+  &_min-width-sm
+    min-width: 26.6rem
+  &_min-width-xs
+    min-width: 15rem
+
+  &_max-width-sm
+    max-width: 26.6rem
+  &_max-width-xs
+    max-width: 15rem
+
+
+  // dropdown в фокусе
+  &_active
+    box-shadow: 0px 10px 20px $color-dark-shade-5
+    .dropdown__btn
+      border-color: $color-dark-shade-50
+    .dropdown__content
+      border-color: $color-dark-shade-50    
+
+  
+  // dropdown в открытом состоянии
+  &_expanded
+    .dropdown__content
+      display: block
+
+    .dropdown__btn        
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0            
+      &-icon
+        transform: rotate(180deg)

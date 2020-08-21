@@ -1,0 +1,16 @@
+.rate-btn
+  // display: inline-block  // полагаю, использовать локально рациональнее
+  &-flex-wrap
+    padding: .3rem 0
+    display: flex
+    cursor: pointer
+    
+  &__icon
+    @include text-linear-gradient
+    user-select: none
+  
+  &__span:hover ~ .rate-btn__span
+    border-bottom: 1px solid #ccc
+
+
+  //https://paulradzkov.com/2014/negation_css_selector/ для rate-btn может пригодиться!!!!

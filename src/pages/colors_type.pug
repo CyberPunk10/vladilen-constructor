@@ -1,0 +1,19 @@
+include ../components/section-pages/section-pages.pug
+include ../components/color-template/color-template.pug
+
+
++section-pages({className: "page-color-typography", title: 'Colors & Type'})
+  .content-colors-type
+    .wrap-color-template
+      +color-template({title: "Dark Shade 100%",  color: "#1F2041", colorBox: "color-dark-shade-100"})
+      +color-template({title: "Dark Shade 75%", color: "#1F2041", colorBox: "color-dark-shade-75"})
+      +color-template({title: "Dark Shade 50%", color: "#1F2041", colorBox: "color-dark-shade-50"})
+      +color-template({title: "Dark Shade 25%", color: "#1F2041", colorBox: "color-dark-shade-25"})
+      +color-template({title: "Dark Shade 5%", color: "#1F2041", colorBox: "color-dark-shade-5"})
+      +color-template({title: "Purple", color: "#BC9CFF", colorBox: "color-purple"})
+      +color-template({title: "Green", color: "#6FCF97", colorBox: "color-green"})
+    
+    .wrap-typography-template
+      include ../components/typography-template/typography-template.pug
+
+    

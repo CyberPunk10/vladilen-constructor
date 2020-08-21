@@ -1,0 +1,91 @@
+/* src/pages/_colors_type.sass */
+
+.page-color-typography
+
+  .content-colors-type
+    display: flex
+    justify-content: space-around
+    padding-top: 13.5rem
+    padding-bottom: 13.5rem
+    transition: padding .2s linear
+
+  .wrap-color-template
+    padding-right: 11.75rem
+    transition: padding .2s linear
+
+  .wrap-typography-template
+    padding-right: 3.1rem
+    transition: padding .2s linear
+
+
+
+  .typography-template
+
+    &__item
+      padding-top: .95rem
+      padding-bottom: 4.05rem
+      display: flex
+      max-width: 42rem
+      vertical-align: top
+
+      &_padding-top
+        padding-top: 0.6rem
+
+    &__tag
+      margin-right: 3rem
+      min-width: 4.5rem
+      display: flex
+      align-items: flex-start
+      justify-content: flex-end
+
+      &_fz-24
+        font-size: 24px
+      &_fz-19
+        font-size: 19px
+      &_fz-12
+        font-size: 12px
+      &_fz-14
+        font-size: 14px
+      &_color-dark-shade-25
+        color: $color-dark-shade-25
+
+
+  
+@media screen and ( max-width: 1300px )
+
+  .page-color-typography
+
+    .content-colors-type
+
+      .wrap-color-template
+        padding-right: 0
+
+      .wrap-typography-template
+        padding-right: 1rem
+
+@media screen and ( max-width: 991px )
+
+  .page-color-typography
+
+    .content-colors-type
+      flex-direction: column
+      align-items: center
+
+      .wrap-color-template
+        margin-bottom: 13.5rem
+        transition: margin .2s linear
+  
+      .wrap-typography-template
+        
+@media screen and ( max-width: 575px )
+
+  .page-color-typography
+
+    .content-colors-type
+      padding-top: 8rem
+      padding-bottom: 8rem
+
+      .wrap-color-template
+        margin-bottom: 8rem
+  
+      .wrap-typography-template

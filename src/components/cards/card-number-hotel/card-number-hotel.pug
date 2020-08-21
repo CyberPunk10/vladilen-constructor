@@ -1,0 +1,59 @@
+include ../../form-wrap/form-wrap.pug
+
+mixin card-number-hotel()
+
+  .card-number-hotel
+    +form-wrap({marginBottom: "0"})
+
+      .card-number-hotel__header.cntr-flex-between-wrap
+
+        .card-number-hotel__header-title
+          span.font-how-h2 № 
+          span.font-how-h1 888 
+          span.font-how-h3 люкс
+
+        .card-number-hotel__header-price
+          span 9 990₽ 
+          span в сутки
+
+      .card-number-hotel__dbl-dropdowns.cntr-flex-between-wrap
+
+        +form-element({title: "прибытие", width: "xs", marginRight: "5"})
+          +dropdown({id: "dropdown-date-1", maxWidth: "xs", title: "19.08.2019"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+        
+        +form-element({title: "выезд", width: "xs"})
+          +dropdown({id: "dropdown-date-2", maxWidth: "xs", title: "23.08.2019"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+      
+      .card-number-hotel__dropdown-guests
+
+        +form-element({title: "гости"})
+          +dropdown({id: "dropdown-how-many-guests", title: "3 гостя", notSaved: "2", typeDrop: "guests"})
+            +option-for-dropdown({title: "Взрослые", defaultValue: "1"})
+            +option-for-dropdown({title: "Дети", defaultValue: "1"})
+            +option-for-dropdown({title: "Младенцы", defaultValue: "1"})
+      
+      .card-number-hotel__description.cntr-flex-between
+        span 9 990₽ х 4 суток
+        span
+        span 39 960₽
+      .card-number-hotel__description.cntr-flex-between
+        span Сбор за услуги: скидка 2 179₽
+        span.card-number-hotel__description_icon i
+        span 0₽
+      .card-number-hotel__description.cntr-flex-between
+        span Сбор за дополнительные услуги
+        span.card-number-hotel__description_icon i
+        span 300₽
+      .card-number-hotel__result.cntr-flex-between
+        span.font-how-h2 Итого
+        span
+        span.font-how-h2 38 081₽
+
+      +btn({title: "забронировать", varBtn: "fill", id: "cards-0", maxWidthBtn: "320", isClickable: true, paddingRight: "3"})
+  

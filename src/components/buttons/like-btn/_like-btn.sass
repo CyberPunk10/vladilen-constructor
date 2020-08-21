@@ -1,0 +1,32 @@
+.like-btn
+  display: inline-block
+  width: 4rem
+  height: 2rem
+  box-sizing: border-box
+  border: 1px solid $color-dark-shade-25
+  border-radius: 1rem
+  
+  &__icon, &__title
+    display: inline-block
+    box-sizing: border-box
+    font-size: 1rem
+    user-select: none         // делает текст невыделяемым
+    color: $color-dark-shade-25
+    line-height: 1.8rem
+
+  &__icon
+    width: 1.5rem
+    padding-left: 0.4rem
+
+  &__title
+    width: 1.8rem
+    text-align: center
+    vertical-align: top
+    
+
+  &_active
+    border: 1px solid $color-purple
+    
+    .like-btn__icon,
+    .like-btn__title
+      color: $color-purple

@@ -1,0 +1,32 @@
+.section-pages
+  background-color: #fff
+  margin: 2.5rem 2.5rem 0
+  position: relative
+  transition: .3s margin linear
+
+  &__title
+    position: absolute
+    color: $color-text-grey
+    top: -1.5rem
+    left: 0
+    font-size: 11px
+
+  &__logo
+
+  &__content
+    
+
+@media screen and ( max-width: 767px )
+  .section-pages
+    margin: 2.5rem 1.5rem 0
+
+@media screen and ( max-width: 420px )
+  .section-pages
+    margin: 4rem 0 0
+  
+    &__title
+      color: #fff
+      top: -2.8rem
+      left: 50%
+      transform: translateX(-50%)
+      font-size: 14px

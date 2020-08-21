@@ -1,0 +1,20 @@
+mixin text-field(options)
+  -
+    // for text-field
+    var className = "text-field"
+    var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
+    var marginBottom = options.marginBottom ? ` text-field_margin-bottom-${options.marginBottom}` : ''   //- "5"
+    className += ` ${width} ${marginBottom}`
+    
+    // for text-field__input
+    var className__input = "text-field__input"
+    var placeholder = options.placeholder || false
+    var value = options.value || false
+    var type = options.type || "text"
+    var focus = options.autofocus ? true : false  //- ""
+
+  
+  div(class = className)
+    input(type = type, class = className__input, value = value, placeholder = placeholder, autofocus=focus)
+    if options.isClickable
+      <i class="text-field__icon material-icons">arrow_forward</i>
