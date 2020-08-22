@@ -13,23 +13,23 @@ let i = 'проверка ES6 синтаксиса'
 let k = value => console.log(value)
 k(i)
 
-const select = new Select('#select', {
-  data: [
-    { id: '1', value: 'React' },
-    { id: '2', value: 'Vue' },
-    { id: '3', value: 'React Native' },
-    { id: '4', value: 'Next' },
-    { id: '5', value: 'Nest' },
-    { id: '6', value: 'Angular' }
-  ],
-  selectedId: '2',
-  placeholder: "Выберите пожалуйста элемент",
-  onSelect(item) {
-    console.log('Selected item: ', item)
-  }
-})
+// const select = new Select('#select', {
+//   data: [
+//     { id: '1', value: 'React' },
+//     { id: '2', value: 'Vue' },
+//     { id: '3', value: 'React Native' },
+//     { id: '4', value: 'Next' },
+//     { id: '5', value: 'Nest' },
+//     { id: '6', value: 'Angular' }
+//   ],
+//   selectedId: '2',
+//   placeholder: "Выберите пожалуйста элемент",
+//   onSelect(item) {
+//     console.log('Selected item: ', item)
+//   }
+// })
 
-window.select = select
+// window.select = select
 
 document.addEventListener('click', function (e) {
 
@@ -43,3 +43,21 @@ document.addEventListener('click', function (e) {
   }
 
 })
+
+
+/////////////////////////////////////////////
+
+import { model } from './model'
+import { Site } from './classes/site'
+import { Sidebar } from './classes/sidebar'
+
+const site = new Site('#site')
+
+const updateCallback = newBlock => {
+  model.push(newBlock)
+  site.render(model)
+}
+
+new Sidebar('#panel', updateCallback)
+
+site.render(model)

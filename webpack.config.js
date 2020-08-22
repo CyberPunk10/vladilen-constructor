@@ -153,20 +153,30 @@ module.exports = {
         ]
       },
 
+      // IMAGES
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: `assets/images/${filename('')}[ext]`
+        },
+      },
+
     ],
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
-      patterns: [
-        { from: 'assets/images', to: 'assets/images' },
-        // { from: 'assets/fonts', to: 'assets/fonts' }
-      ],
-    }),
+    // new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
+    //   // patterns: [
+    //   //   // { from: 'assets/images', to: 'assets/images' },
+    //   //   // { from: 'assets/fonts', to: 'assets/fonts' }
+    //   // ],
+    // }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.pug',
+      template: 'index.html',
+      // template: 'index.pug',
       //inject: false             // если оставить false, то внутри не будут генерироваться  пути с именами, включающими [hash].. вроде так
     }),
     new MiniCssExtractPlugin({
